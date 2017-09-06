@@ -1,0 +1,14 @@
+= form_for(@account) do |f|
+  p
+    = f.label :name
+    = f.text_field :name
+  p
+    = f.label :balance
+    = f.number_field :balance, step: :any
+  p
+    = f.label :currency
+    = f.text_field :currency
+  p
+    = f.label :email
+    = f.text_field :email
+  = f.submit 'Save'

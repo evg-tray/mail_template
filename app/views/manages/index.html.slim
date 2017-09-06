@@ -1,0 +1,12 @@
+h4
+  = link_to 'Create message template', new_message_path
+h4
+  = link_to 'Create account', new_account_path
+= form_tag(send_message_path, method: :post) do |f|
+  p
+    = label_tag :message_id, 'Template:'
+    = collection_select :message, :id, Message.all, :id, :title
+  p
+    = label_tag :account_id, 'Account:'
+    = collection_select :account, :id, Account.all, :id, :name
+  = submit_tag 'Send message'
